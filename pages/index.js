@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-white text-5xl px-5">
           Olá, <br /> meu nome é José Yuri.
         </h1>
-        <p className="mt-9">esse site esta em construção</p>
+        <p className="mt-9">esse site está em construção</p>
       </main>
 
       <footer className="flex justify-center text-white">
