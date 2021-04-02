@@ -1,5 +1,6 @@
 import Head from "next/head"
 import { motion } from "framer-motion"
+import { VscGithub } from "react-icons/vsc"
 
 export default function Home() {
   return (
@@ -28,9 +29,18 @@ export default function Home() {
         <h2 className="text-xl  mb-5">
           Eu construo coisas pra internet, para todos.
         </h2>
-        <a className="underline" href="mailto:jozeyuri@gmail.com">
-          {"> diga oi"}
-        </a>
+        <div className="flex justify-center items-center">
+          <a className="underline" href="mailto:jozeyuri@gmail.com">
+            {"> diga oi"}
+          </a>
+          <a
+            href="https://github.com/zeyuri"
+            rel="nofollow me"
+            className="ml-4"
+          >
+            <VscGithub />
+          </a>
+        </div>
       </motion.main>
 
       <footer className="flex justify-center text-white">
