@@ -21,7 +21,7 @@ export default function Home() {
       <motion.main
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="text-center duration-500 ease-in-out"
+        className="text-center duration-500 ease-in-out -mt-56"
       >
         <h1 className="text-white text-5xl px-5 mb-5">
           Olá, <br /> meu nome é José Yuri.
