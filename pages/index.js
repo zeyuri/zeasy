@@ -3,11 +3,12 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-1 min-h-screen flex flex-col justify-between ">
+    <div className="container mx-auto p-1 min-h-screen flex flex-col justify-between">
       <Head>
         <title>zeasy home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <motion.header
         className="px-10 py-6 duration-1000 ease-in-out"
         initial={{ y: 8, opacity: 0 }}
@@ -15,16 +16,20 @@ export default function Home() {
       >
         <h1 className="font-bold text-2xl">zeasy.dev</h1>
       </motion.header>
+
       <motion.main
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         className="text-center duration-500 ease-in-out"
       >
-        <h1 className="text-white text-5xl px-5 mb-10">
+        <h1 className="text-white text-5xl px-5 mb-5">
           Olá, <br /> meu nome é José Yuri.
         </h1>
+        <h2 className="text-xl  mb-5">
+          Eu construo coisas pra internet, para todos.
+        </h2>
         <a className="underline" href="mailto:jozeyuri@gmail.com">
-          > diga oi
+          {"> diga oi"}
         </a>
       </motion.main>
 
