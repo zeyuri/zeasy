@@ -1,19 +1,32 @@
 import Head from "next/head"
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="container mx-auto p-1 min-h-screen flex flex-col justify-between">
+    <div className="container mx-auto p-1 min-h-screen flex flex-col justify-between ">
       <Head>
-        <title>Create Next App</title>
+        <title>zeasy home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="mt-20 text-center">
-        <h1 className="text-white text-5xl px-5">
+      <motion.header
+        className="px-10 py-6 duration-1000 ease-in-out"
+        initial={{ y: 8, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+      >
+        <h1 className="font-bold text-2xl">zeasy.dev</h1>
+      </motion.header>
+      <motion.main
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="text-center duration-500 ease-in-out"
+      >
+        <h1 className="text-white text-5xl px-5 mb-10">
           Olá, <br /> meu nome é José Yuri.
         </h1>
-        <p className="mt-9">esse site está em construção</p>
-      </main>
+        <a className="underline" href="mailto:jozeyuri@gmail.com">
+          > diga oi
+        </a>
+      </motion.main>
 
       <footer className="flex justify-center text-white">
         <a
