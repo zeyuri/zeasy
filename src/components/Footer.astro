@@ -1,0 +1,22 @@
+---
+import IconGithub from './IconGithub.astro';
+import IconEmail from './IconEmail.astro';
+
+const today = new Date();
+const year = today.getFullYear();
+
+---
+<footer class="flex py-1 text-indigo-200 items-center w-full justify-center flex-col">
+  <div class="flex items-center">
+    <a href="mailto:jozeyuri@gmail.com">
+      <IconEmail />
+    </a>
+    <a href="https://github.com/zeyuri">
+      <IconGithub />
+    </a>
+  </div>
+  <div>
+    <p class="text-lg">zeasy {year}</p>  
+  </div>
+  
+</footer>
