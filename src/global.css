@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-black p-6  md:p-10 lg:p-14 xl:p-20 text-blue-200;
+    min-height: 100vh;
+  }
+}
+
 *,
 ::before,
 ::after {

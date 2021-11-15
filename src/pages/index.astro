@@ -4,48 +4,22 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
 
-interface MarkdownFrontmatter {
-  publishDate: number;
-}
+let title = 'Take Zeasy | Home';
+let description = 'Silence is Golden';
+let permalink = 'https://zeasy.dev/';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let title = 'Example Blog';
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
-
-// Data Fetching: List all Markdown posts in the repo.
-
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
-    <link rel="stylesheet" type="text/css" href={Astro.resolve("../global.css")}>
   </head>
-
-  <body class="bg-gray-900 p-4 mx-auto xl:max-w-7xl">
+  <body class="flex flex-col justify-between max-w-screen-md mx-auto">
     <Header />
     <main class="hero">
       <p>I build <span class="text-pink-600">bridges</span> between people.</p>
       <p>Sometimes <span  class="text-pink-600">conversation</span> is the best bridge.</p>
       <p>Sometimes  the best solution is <span  class="text-pink-600">bleeding-edge tech</span>.</p>
-      <p>I do both.</p>
-      <!-- <article class="content">
-        <section class="intro">
-          <h1 class="latest">{title}</h1>
-          <p>{description}</p>
-        </section>
-        <section>
-          {allPosts.map(p => <BlogPostPreview post={p} />)}
-        </section>
-      </article> -->
+      <p>I can do <span  class="text-pink-600">both</span>.</p>
     </main>
     <Footer />
   </body>
@@ -54,7 +28,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
 <style>
   .hero {
     @apply leading-none text-indigo-100;
-    font-size: clamp(2rem, 10vw, 6rem); 
+    font-size: clamp(2rem, 10vw, 3rem); 
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 
   }
   .hero p {

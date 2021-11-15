@@ -1,0 +1,42 @@
+---
+// Component Imports
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro'
+import BlogPostPreview from '../../components/BlogPostPreview.astro';
+
+let title = 'Take Zeasy | Blog';
+let description = 'Here are my last thoughts';
+let permalink = 'https://zeasy.dev/blog';
+
+let allPosts = await Astro.fetchContent('./*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
+
+
+---
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink} />
+  </head>
+
+  <body class="flex flex-col justify-between max-w-screen-md mx-auto">
+    <Header />
+    <main class="hero flex-grow mt-2">
+      {allPosts.map(p => <BlogPostPreview post={p} />)}
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .hero {
+    @apply leading-none text-indigo-100;
+    font-size: clamp(2rem, 10vw, 3rem); 
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+
+  }
+  .hero p {
+    @apply mb-8
+  }
+</style>
