@@ -12,13 +12,11 @@ let permalink = 'https://zeasy.dev/blog';
 let allPosts = await Astro.fetchContent('./*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf());
 
-
 ---
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} permalink={permalink} />
   </head>
-
   <body class="flex flex-col justify-between max-w-screen-md mx-auto">
     <Header />
     <main class="hero flex-grow mt-2">
@@ -34,7 +32,6 @@ allPosts = allPosts.sort((a, b) => new Date(b.publishDate).valueOf() - new Date(
     font-size: clamp(2rem, 10vw, 3rem); 
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-
   }
   .hero p {
     @apply mb-8
