@@ -1,5 +1,5 @@
 ---
-title: "The Hardest one"
+title: "The Hardest One"
 publishDate: "Monday, November 15 2021"
 layout: "../../layouts/BlogPost.astro"
 ---
